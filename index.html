@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Information Technology Department - ITCL</title>
+  <style>
+    /* ===== Base Styling ===== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #000;
+    }
+    header {
+      background-color: #001f3f; /* Navy Blue */
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .header-content h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .header-content p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #dcdcdc;
+    }
+    .logo {
+      width: 70px;
+      height: auto;
+	  border-radius: 50%;
+      background: white; /* optional: contrast with navy */
+      padding: 1px;
+    }
+
+    /* ===== Carousel ===== */
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .carousel button:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    /* ===== Sections ===== */
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    section h2 {
+      border-left: 6px solid #001f3f;
+      padding-left: 10px;
+      margin-bottom: 1rem;
+      color: #001f3f;
+    }
+
+    /* ===== Updates ===== */
+    .updates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+		text-decoration: none;
+    }
+    .update-card {
+	  text-decoration: none;
+      background: #f9f9f9;
+      border-left: 5px solid #001f3f;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .update-card:hover {
+      transform: translateY(-5px);
+    }
+    .update-card h3 {
+      margin-top: 0;
+      color: #000;
+    }
+    .update-card p {
+      color: #333;
+		text-decoration: none;
+    }
+
+    /* ===== Gallery ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .lightbox:target {
+      display: flex;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+	  .update-link {
+  text-decoration: none;  /* removes underline */
+  color: inherit;         /* keeps the card text color */
+  display: block;         /* ensures the whole card area is clickable */
+}
+.update-link:hover .update-card {
+  transform: translateY(-5px); /* keep hover effect */
+}
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.header-nav a:hover {
+  background-color: white;
+  color: #001f3f; /* navy blue text on hover */
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <img src="images/log.png.jpg" alt="College Logo" class="logo">
+      <div>
+        <h1>Information Technology Department - ITCL</h1>
+        <p>Stay informed. Stay connected.</p>
+      </div>
+    </div>
+	<nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="events-updates.html">Events & Updates</a>
+    <a href="guest-lectures.html">Guest Lectures</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  </header>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <img src="images/event1.jpg" alt="Event 1">
+      <img src="images/Event 2.jpeg" alt="Event 2">
+      <img src="images/cvent3.jpg.jpeg" alt="Event 3">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Updates Section -->
+  <section>
+    <h2>Latest Updates</h2>
+    <div class="updates">
+      <div class="update-card">
+        <h3>Programming Competition 2025</h3>
+        <p>Programming Competition on the <br><b>19 Sept - 26 Sept 2025</b></p>
+      </div>
+      <a href="guest-lectures.html" class="update-link">
+		  <div class="update-card">
+        <h3>Guest Lecture</h3>
+        <p><b>Ms. Albertine Shipena</b> gave a lecture on <b>Internship Opportunities</b>, <b>12th October</b></p>
+      </div></a>
+      <div class="update-card">
+        <h3>Exam Timetable Released</h3>
+        <p><b>Final semester exam schedule</b> is now available for download.</p>
+      </div>
+      <div class="update-card">
+        <h3>Current Clubs</h3>
+        <p>Join any of the current IT Clubs (<b>Programming</b>, <b>Cyber Security</b> & <b>Designing</b>)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section>
+    <h2>Event Gallery</h2>
+    <div class="gallery">
+      <a href="#img1"><img src="images/event1.jpg" alt="Gallery Image 1"></a>
+      <a href="#img2"><img src="images/event2.jpg" alt="Gallery Image 2"></a>
+      <a href="#img3"><img src="images/event3.jpg" alt="Gallery Image 3"></a>
+      <a href="#img4"><img src="images/event4.jpg" alt="Gallery Image 4"></a>
+      <a href="#img5"><img src="images/event5.jpg" alt="Gallery Image 5"></a>
+    </div>
+  </section>
+
+  <!-- Lightbox Previews -->
+  <div id="img1" class="lightbox"><img src="images/event1.jpg"></div>
+  <div id="img2" class="lightbox"><img src="images/event2.jpg"></div>
+  <div id="img3" class="lightbox"><img src="images/event3.jpg"></div>
+  <div id="img4" class="lightbox"><img src="images/event4.jpg"></div>
+  <div id="img5" class="lightbox"><img src="images/event5.jpg"></div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Your College Name | Events & Updates Portal
+  </footer>
+
+  <!-- ===== JavaScript for Carousel ===== -->
+  <script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let index = 0;
+
+    function showSlide(i) {
+      if (i >= images.length) index = 0;
+      if (i < 0) index = images.length - 1;
+      slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+      index++;
+      showSlide(index);
+    });
+
+    prev.addEventListener('click', () => {
+      index--;
+      showSlide(index);
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+      index++;
+      showSlide(index);
+    }, 5000);
+  </script>
+
+</body>
+</html>
